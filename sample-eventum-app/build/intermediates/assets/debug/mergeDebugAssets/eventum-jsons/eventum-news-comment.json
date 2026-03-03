@@ -1,0 +1,221 @@
+{
+  "_comment": "eventum-news-comment",
+  "card": {
+    "variables": [
+      {
+        "name": "items",
+        "type": "array",
+        "value": [
+          {
+            "id": "127c47d2-fab3-44e7-b7ec-4b4574886385",
+            "avatar": "empty://",
+            "author": "Вильгельмина Христорождественская",
+            "date": "12 окт",
+            "text": "Она следует за ним в кроличью нору, падает в неё и оказывается в зале со множеством запертых дверей"
+          },
+          {
+            "id": "2781d683-d6ad-4ec9-b7c9-174506520ab5",
+            "avatar": "empty://",
+            "author": "Ксения Демидова",
+            "date": "12 окт",
+            "text": "Скучающая на берегу реки со своей сестрой, видит спешащего Белого Кролика, держащего в лапке карманные часы"
+          },
+          {
+            "id": "3d6d33d0-2894-4d21-8702-32f623356a25",
+            "avatar": "empty://",
+            "author": "Ольга Васильева",
+            "date": "12 окт",
+            "text": "Там она находит ключ от маленькой 15-дюймовой двери, за которой виден сад, в который девочка хочет попасть."
+          },
+          {
+            "id": "42d93170-1f95-48ee-a886-113641e27ef0",
+            "avatar": "https://fluid-line.ru/assets/images/kalash.png",
+            "author": "Василий Андроид",
+            "date": "12 окт",
+            "text": "Она обнаруживает различные предметы, которые увеличивают и уменьшают её рост. Поплакав, она замечает Кролика, который роняет веер и перчатки."
+          }
+        ]
+      },
+      {
+        "name": "reply_url",
+        "type": "url",
+        "value": "http://localhost:5173/comment-reply"
+      }
+    ],
+    "log_id": "root",
+    "states": [
+      {
+        "state_id": 0,
+        "div": {
+          "type": "container",
+          "background": [
+            {
+              "color": "#fff",
+              "type": "solid"
+            }
+          ],
+          "height": {
+            "type": "match_parent"
+          },
+          "paddings": {
+            "top": 16,
+            "left": 16,
+            "right": 16,
+            "bottom": 16
+          },
+          "item_builder": {
+            "data": "@{items}",
+            "data_element_name": "item",
+            "prototypes": [
+              {
+                "div": {
+                  "type": "item",
+                  "id": "@{item.getString('id')}",
+                  "avatar": "@{item.getString('avatar')}",
+                  "author": "@{item.getString('author')}",
+                  "date": "@{item.getString('date')}",
+                  "text": "@{item.getString('text')}",
+                  "margins": {
+                    "bottom": "@{index == len(items) - 1 ? 0 : 16}"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "templates": {
+    "item": {
+      "type": "container",
+      "variables": [
+        {
+          "name": "id",
+          "type": "string",
+          "$value": "id"
+        },
+        {
+          "name": "avatar",
+          "type": "string",
+          "$value": "avatar"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "$value": "author"
+        }
+      ],
+      "items": [
+        {
+          "type": "container",
+          "orientation": "horizontal",
+          "paddings": {
+            "bottom": 8,
+            "top": 4
+          },
+          "items": [
+            {
+              "type": "image",
+              "$image_url": "avatar",
+              "preload_required": true,
+              "border": {
+                "corner_radius": 12
+              },
+              "height": {
+                "type": "fixed",
+                "value": 24
+              },
+              "visibility": "@{avatar == 'empty://' ? 'gone' : 'visible'}",
+              "width": {
+                "type": "fixed",
+                "value": 24
+              }
+            },
+            {
+              "type": "text",
+              "text": "@{substring(name, 0, 1)}",
+              "text_color": "#aa50dc",
+              "background": [
+                {
+                  "color": "#f6edfb",
+                  "type": "solid"
+                }
+              ],
+              "border": {
+                "corner_radius": 12
+              },
+              "font_size": 14,
+              "font_weight": "medium",
+              "line_height": 24,
+              "height": {
+                "type": "fixed",
+                "value": 24
+              },
+              "text_alignment_horizontal": "center",
+              "visibility": "@{avatar == 'empty://' ? 'visible' : 'gone'}",
+              "width": {
+                "type": "fixed",
+                "value": 24
+              }
+            },
+            {
+              "type": "text",
+              "$text": "author",
+              "text_color": "#768095",
+              "font_size": 14,
+              "font_weight": "medium",
+              "line_height": 24,
+              "margins": {
+                "left": 8,
+                "right": 8
+              },
+              "max_lines": 1
+            },
+            {
+              "type": "text",
+              "$text": "date",
+              "text_color": "#adb3bf",
+              "font_size": 14,
+              "font_weight": "medium",
+              "line_height": 24,
+              "width": {
+                "type": "wrap_content"
+              }
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "$text": "text",
+          "text_color": "#000000",
+          "font_size": 14,
+          "font_weight": "medium",
+          "line_height": 18
+        },
+        {
+          "type": "container",
+          "paddings": {
+            "top": 8
+          },
+          "items": [
+            {
+              "type": "text",
+              "text": "Ответить",
+              "text_color": "#0070ff",
+              "font_size": 14,
+              "font_weight": "medium",
+              "line_height": 28,
+              "actions": [
+                {
+                  "log_id": "reply",
+                  "url": "@{reply_url}?id=@{id}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

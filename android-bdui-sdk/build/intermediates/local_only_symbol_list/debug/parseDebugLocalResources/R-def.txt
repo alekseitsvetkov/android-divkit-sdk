@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+id bduiHostContainer
+id contentContainer
+id errorContainer
+id errorMessage
+id loadingView
+id retryButton
+layout bdui_host_activity
+layout bdui_screen_fragment
+style Theme.Bdui.Transparent

@@ -1,0 +1,129 @@
+{
+  "_comment": "eventum-news-top",
+  "card": {
+    "variables": [
+      {
+        "name": "items",
+        "type": "array",
+        "value": [
+          {
+            "id": 1,
+            "url": "http://localhost:5173/feed/01",
+            "title": "🔥 3D-экскурсовод: на Никольской улице протестируют AR-экскурсию",
+            "comment_count": "216"
+          },
+          {
+            "id": 2,
+            "url": "http://localhost:5173/feed/02",
+            "title": "AR/VR в нефтегазовой отрасли: кейсы и лучшие практики",
+            "comment_count": "10"
+          },
+          {
+            "id": 3,
+            "url": "http://localhost:5173/feed/03",
+            "title": "Jobby: почти 70% HR-специалистов допускают, что метавселенные смогут заменить",
+            "comment_count": "685"
+          },
+          {
+            "id": 4,
+            "url": "http://localhost:5173/feed/04",
+            "title": "SpaceX запустила космический корабль Starship в суборбитальный полёт",
+            "comment_count": "854"
+          },
+          {
+            "id": 5,
+            "url": "http://localhost:5173/feed/05",
+            "title": "Владелец Street Beat запустит новую сеть спортивной одежды",
+            "comment_count": "556"
+          }
+        ]
+      },
+      {
+        "name": "comment_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGU4ZTkzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDE0LjUsOCBDIDE0LjUsMTEuNCAxMiwxMy41IDgsMTMuNSA2LjcsMTMuNSA1LjQsMTMuMyA0LjUsMTIuOCA0LjEsMTMgMywxMy45IDEuNSwxMy4zIDIsMTIuNiAyLjMsMTEuOSAyLjMsMTEuMiAyLjMsMTAuNCAxLjUsOS4zIDEuNSw4IDEuNSw0LjYgNCwyLjUgOCwyLjUgYyA0LDAgNi41LDIuMSA2LjUsNS41IHoiLz48L3N2Zz4="
+      }
+    ],
+    "log_id": "root",
+    "states": [
+      {
+        "state_id": 0,
+        "div": {
+          "type": "container",
+          "orientation": "vertical",
+          "background": [
+            {
+              "color": "#fff",
+              "type": "solid"
+            }
+          ],
+          "border": {
+            "corner_radius": 16
+          },
+          "paddings": {
+            "top": 16,
+            "left": 16,
+            "right": 16,
+            "bottom": 16
+          },
+          "items": [
+            {
+              "type": "newsTopTitle",
+              "text": "Топ новости"
+            },
+            {
+              "type": "container",
+              "item_builder": {
+                "data": "@{items}",
+                "data_element_name": "item",
+                "prototypes": [
+                  {
+                    "div": {
+                      "type": "newsTopItem",
+                      "id": "@{item.getString('id')}",
+                      "url": "@{item.getString('url')}",
+                      "title": "@{item.getString('title')}",
+                      "comment_count": "@{item.getString('comment_count')}"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "templates": {
+    "newsTopTitle": {
+      "type": "text",
+      "font_size": 20,
+      "font_weight": "medium",
+      "line_height": 24,
+      "paddings": {
+        "bottom": 4
+      }
+    },
+    "newsTopItem": {
+      "type": "container",
+      "margins": {
+        "top": 12
+      },
+      "items": [
+        {
+          "type": "text",
+          "font_size": 14,
+          "font_weight": "medium",
+          "line_height": 18,
+          "$text": "title",
+          "actions": [
+            {
+              "log_id": "url",
+              "$url": "url"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

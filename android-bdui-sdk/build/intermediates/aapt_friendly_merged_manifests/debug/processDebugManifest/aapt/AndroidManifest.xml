@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eventum.bdui.sdk" >
+
+    <uses-sdk android:minSdkVersion="24" />
+
+    <application>
+        <activity
+            android:name="com.eventum.bdui.sdk.BduiHostActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Bdui.Transparent" />
+    </application>
+
+</manifest>

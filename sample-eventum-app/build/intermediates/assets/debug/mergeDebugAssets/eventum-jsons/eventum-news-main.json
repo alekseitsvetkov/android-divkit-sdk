@@ -1,0 +1,245 @@
+{
+  "_comment": "eventum-news-main",
+  "card": {
+    "variables": [
+      {
+        "name": "items",
+        "type": "array",
+        "value": [
+          {
+            "id": 1,
+            "url": "http://localhost:5173/feed/01",
+            "title": "На площадке ПМГФ-2024 традиционно состоится Молодёжный день",
+            "cover_url": "https://gas-forum.ru/wp-content/uploads/2025/11/12312311.jpg",
+            "date": "3 часа назад"
+          },
+          {
+            "id": 2,
+            "url": "http://localhost:5173/feed/02",
+            "title": "Поздравляем металлургов с профессиональным праздником!",
+            "cover_url": "https://gas-forum.ru/wp-content/cache/thumb/f5/5b803be80ed24f5_767x500.jpg",
+            "date": "26 января"
+          },
+          {
+            "id": 3,
+            "url": "http://localhost:5173/feed/03",
+            "title": "ДМТ представит на площадке ПМГФ-2024 видеорегистратор, который способен работать в экстремальных условиях",
+            "cover_url": "empty://",
+            "date": "25 января"
+          }
+        ]
+      },
+      {
+        "name": "news_url",
+        "type": "string",
+        "value": "/feed"
+      },
+      {
+        "name": "chevron_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDA3MGZmIiBzdHJva2Utd2lkdGg9IjEuMyIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTUuNyAyLjcgMTEgOGwtNS4zIDUuMyIvPjwvc3ZnPg=="
+      }
+    ],
+    "log_id": "root",
+    "states": [
+      {
+        "state_id": 0,
+        "div": {
+          "type": "container",
+          "background": [
+            {
+              "color": "#fff",
+              "type": "solid"
+            }
+          ],
+          "border": {
+            "corner_radius": 16
+          },
+          "paddings": {
+            "top": 16,
+            "left": 16,
+            "right": 16,
+            "bottom": 16
+          },
+          "items": [
+            {
+              "type": "text",
+              "text_color": "#1c1c1e",
+              "font_size": 20,
+              "font_weight": "medium",
+              "line_height": 24,
+              "margins": {
+                "bottom": 24
+              },
+              "text": "Новости форума"
+            },
+            {
+              "type": "container",
+              "item_builder": {
+                "data": "@{items}",
+                "data_element_name": "item",
+                "prototypes": [
+                  {
+                    "div": {
+                      "type": "container",
+                      "items": [
+                        {
+                          "type": "item",
+                          "url": "@{item.getString('url')}",
+                          "title": "@{item.getString('title')}",
+                          "cover_url": "@{item.getString('cover_url')}",
+                          "date": "@{item.getString('date')}"
+                        },
+                        {
+                          "type": "divider",
+                          "visibility": "@{index == len(items) - 1 ? 'gone' : 'visible'}"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "container",
+              "orientation": "horizontal",
+              "margins": {
+                "bottom": 4,
+                "top": 16
+              },
+              "actions": [
+                {
+                  "log_id": "url",
+                  "url": "@{news_url}"
+                }
+              ],
+              "items": [
+                {
+                  "type": "text",
+                  "text_color": "#0070ff",
+                  "font_size": 14,
+                  "font_weight": "medium",
+                  "line_height": 16,
+                  "text": "Все новости",
+                  "width": {
+                    "type": "wrap_content"
+                  }
+                },
+                {
+                  "type": "image",
+                  "image_url": "@{chevron_icon}",
+                  "preload_required": true,
+                  "height": {
+                    "type": "fixed",
+                    "value": 16
+                  },
+                  "margins": {
+                    "left": 4
+                  },
+                  "width": {
+                    "type": "fixed",
+                    "value": 16
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "templates": {
+    "param": {
+      "type": "text",
+      "text_color": "#adb3bf",
+      "font_size": 14,
+      "font_weight": "medium",
+      "line_height": 18
+    },
+    "button": {
+      "type": "container",
+      "orientation": "horizontal",
+      "margins": {
+        "right": 16
+      },
+      "width": {
+        "type": "wrap_content"
+      }
+    },
+    "divider": {
+      "type": "container",
+      "background": [
+        {
+          "color": "#d6d6da",
+          "type": "solid"
+        }
+      ],
+      "height": {
+        "type": "fixed",
+        "value": 1
+      },
+      "margins": {
+        "bottom": 16,
+        "top": 16
+      }
+    },
+    "item": {
+      "type": "container",
+      "items": [
+        {
+          "type": "container",
+          "orientation": "horizontal",
+          "items": [
+            {
+              "type": "container",
+              "items": [
+                {
+                  "type": "text",
+                  "text_color": "#000",
+                  "font_size": 16,
+                  "font_weight": "medium",
+                  "line_height": 24,
+                  "max_lines": 3,
+                  "$text": "title",
+                  "actions": [
+                    {
+                      "log_id": "url",
+                      "$url": "url"
+                    }
+                  ]
+                },
+                {
+                  "type": "param",
+                  "margins": {
+                    "top": 8
+                  },
+                  "$text": "date"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "$image_url": "cover_url",
+              "placeholder_color": "#adb3bf",
+              "preload_required": true,
+              "border": {
+                "corner_radius": 12
+              },
+              "height": {
+                "type": "fixed",
+                "value": 74
+              },
+              "margins": {
+                "left": 16
+              },
+              "width": {
+                "type": "fixed",
+                "value": 74
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,370 @@
+{
+  "_comment": "eventum-news-feed",
+  "card": {
+    "variables": [
+      {
+        "name": "items",
+        "type": "array",
+        "value": [
+          {
+            "id": 1,
+            "url": "http://localhost:5173/feed/01",
+            "title": "На площадке ПМГФ-2024 традиционно состоится Молодёжный день",
+            "cover_url": "https://gas-forum.ru/wp-content/uploads/2025/11/12312311.jpg",
+            "category": "Технологии",
+            "date": "3 часа назад",
+            "like_count": "134",
+            "like_toggle": "on",
+            "like_state": "set",
+            "comment_count": "86",
+            "like_action_url": "http://localhost:3001/api/v1/web-sdk/eventum/news/01/like",
+            "like_action_headers": [],
+            "like_action_method": "post"
+          },
+          {
+            "id": 2,
+            "url": "http://localhost:5173/feed/02",
+            "title": "Поздравляем металлургов с профессиональным праздником!",
+            "cover_url": "https://gas-forum.ru/wp-content/cache/thumb/f5/5b803be80ed24f5_767x500.jpg",
+            "category": "Финансы",
+            "date": "26 января",
+            "like_count": "67",
+            "like_toggle": "off",
+            "like_state": "unset",
+            "comment_count": "313",
+            "like_action_url": "http://localhost:3001/api/v1/web-sdk/eventum/news/02/like",
+            "like_action_headers": [],
+            "like_action_method": "post"
+          },
+          {
+            "id": 3,
+            "url": "http://localhost:5173/feed/03",
+            "title": "ДМТ представит на площадке ПМГФ-2024 видеорегистратор, который способен работать в экстремальных условиях",
+            "cover_url": "empty://",
+            "category": "Авто",
+            "date": "25 января",
+            "like_count": "165",
+            "like_toggle": "off",
+            "like_state": "unset",
+            "comment_count": "115",
+            "like_action_url": "http://localhost:3001/api/v1/web-sdk/eventum/news/03/like",
+            "like_action_headers": [],
+            "like_action_method": "post"
+          }
+        ]
+      },
+      {
+        "name": "like",
+        "type": "dict",
+        "value": {
+          "set": {
+            "tint": "#ff3030",
+            "color": "#ff3030"
+          },
+          "unset": {
+            "tint": "initial",
+            "color": "#8e8e93"
+          }
+        }
+      },
+      {
+        "name": "like_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjOGU4ZTkzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMiA2LjVjMC0zLjIgMy42LTUuMiA2LTIuNyAyLjQtMi41IDYtLjUgNiAyLjcgMCAyLjYtMi43IDUuMi02IDYuOC0zLjMtMS42LTYtNC4yLTYtNi44WiIvPjwvc3ZnPg=="
+      },
+      {
+        "name": "comment_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGU4ZTkzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDE0LjUsOCBDIDE0LjUsMTEuNCAxMiwxMy41IDgsMTMuNSA2LjcsMTMuNSA1LjQsMTMuMyA0LjUsMTIuOCA0LjEsMTMgMywxMy45IDEuNSwxMy4zIDIsMTIuNiAyLjMsMTEuOSAyLjMsMTEuMiAyLjMsMTAuNCAxLjUsOS4zIDEuNSw4IDEuNSw0LjYgNCwyLjUgOCwyLjUgYyA0LDAgNi41LDIuMSA2LjUsNS41IHoiLz48L3N2Zz4="
+      }
+    ],
+    "log_id": "root",
+    "states": [
+      {
+        "state_id": 0,
+        "div": {
+          "type": "container",
+          "items": [
+            {
+              "type": "container",
+              "id": "container_id",
+              "variables": []
+            },
+            {
+              "type": "container",
+              "item_builder": {
+                "data": "@{items}",
+                "data_element_name": "item",
+                "prototypes": [
+                  {
+                    "div": {
+                      "type": "item",
+                      "id": "@{item.getInteger('id')}",
+                      "url": "@{item.getString('url')}",
+                      "title": "@{item.getString('title')}",
+                      "cover_url": "@{item.getString('cover_url')}",
+                      "category": "@{item.getString('category')}",
+                      "date": "@{item.getString('date')}",
+                      "like_count": "@{item.getString('like_count')}",
+                      "comment_count": "@{item.getString('comment_count')}",
+                      "padding_top": "@{toInteger(index == 0 ? 0 : 12)}",
+                      "like_action_method": "@{item.getString('like_action_method')}",
+                      "like_action_headers": "@{item.getString('like_action_headers')}",
+                      "like_action_url": "@{item.getString('like_action_url')}"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "templates": {
+    "icon": {
+      "type": "image",
+      "preload_required": true,
+      "height": {
+        "type": "fixed",
+        "value": 24
+      },
+      "width": {
+        "type": "fixed",
+        "value": 24
+      }
+    },
+    "param": {
+      "type": "text",
+      "text_color": "#adb3bf",
+      "font_size": 14,
+      "font_weight": "medium",
+      "line_height": 18
+    },
+    "button": {
+      "type": "container",
+      "orientation": "horizontal",
+      "margins": {
+        "right": 16
+      },
+      "width": {
+        "type": "wrap_content"
+      }
+    },
+    "item": {
+      "type": "container",
+      "background": [
+        {
+          "color": "#fff",
+          "type": "solid"
+        }
+      ],
+      "border": {
+        "corner_radius": 16
+      },
+      "margins": {
+        "$top": "padding_top"
+      },
+      "paddings": {
+        "top": 16,
+        "left": 16,
+        "right": 16,
+        "bottom": 16
+      },
+      "variables": [
+        {
+          "name": "like_toggle",
+          "type": "string",
+          "value": "off"
+        },
+        {
+          "name": "like_state",
+          "type": "string",
+          "value": "@{getDictFromArray(items, index).getString('like_state')}"
+        },
+        {
+          "name": "like_count",
+          "type": "string",
+          "value": "@{getDictFromArray(items, index).getString('like_count')}"
+        }
+      ],
+      "variable_triggers": [
+        {
+          "condition": "@{like_toggle == 'on' && like_state == 'set'}",
+          "mode": "on_variable",
+          "actions": [
+            {
+              "log_id": "update like_toggle",
+              "url": "div-action://set_variable?name=like_toggle&value=off"
+            },
+            {
+              "log_id": "update like_state",
+              "url": "div-action://set_variable?name=like_state&value=unset"
+            },
+            {
+              "log_id": "update like_count",
+              "url": "div-action://set_variable?name=like_count&value=@{toInteger(like_count) - 1}"
+            },
+            {
+              "log_id": "submit unlike",
+              "typed": {
+                "type": "submit",
+                "container_id": "container_id",
+                "request": {
+                  "$method": "like_action_method",
+                  "$headers": "like_action_headers",
+                  "$url": "like_action_url"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "condition": "@{like_toggle == 'on' && like_state != 'set'}",
+          "mode": "on_variable",
+          "actions": [
+            {
+              "log_id": "update like_toggle",
+              "url": "div-action://set_variable?name=like_toggle&value=off"
+            },
+            {
+              "log_id": "update like_state",
+              "url": "div-action://set_variable?name=like_state&value=set"
+            },
+            {
+              "log_id": "update like_count",
+              "url": "div-action://set_variable?name=like_count&value=@{toInteger(like_count) + 1}"
+            },
+            {
+              "log_id": "submit like",
+              "typed": {
+                "type": "submit",
+                "container_id": "container_id",
+                "request": {
+                  "$method": "like_action_method",
+                  "$headers": "like_action_headers",
+                  "$url": "like_action_url"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "type": "container",
+          "orientation": "horizontal",
+          "margins": {
+            "bottom": 12
+          },
+          "items": [
+            {
+              "type": "param",
+              "$text": "category"
+            },
+            {
+              "type": "param",
+              "width": {
+                "type": "wrap_content"
+              },
+              "$text": "date"
+            }
+          ]
+        },
+        {
+          "type": "container",
+          "orientation": "horizontal",
+          "items": [
+            {
+              "type": "text",
+              "text_color": "#000",
+              "font_size": 18,
+              "font_weight": "medium",
+              "line_height": 26,
+              "max_lines": 3,
+              "$text": "title",
+              "actions": [
+                {
+                  "log_id": "url",
+                  "$url": "url"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "$image_url": "cover_url",
+              "placeholder_color": "#adb3bf",
+              "preload_required": true,
+              "border": {
+                "corner_radius": 12
+              },
+              "height": {
+                "type": "fixed",
+                "value": 74
+              },
+              "margins": {
+                "left": 16
+              },
+              "width": {
+                "type": "fixed",
+                "value": 74
+              }
+            }
+          ]
+        },
+        {
+          "type": "container",
+          "orientation": "horizontal",
+          "margins": {
+            "top": 12
+          },
+          "items": [
+            {
+              "type": "container",
+              "orientation": "horizontal",
+              "margins": {
+                "right": 12
+              },
+              "items": [
+                {
+                  "type": "button",
+                  "items": [
+                    {
+                      "type": "icon",
+                      "image_url": "@{like_icon}",
+                      "tint_color": "@{getColorFromDict(like, like_state, 'tint')}"
+                    },
+                    {
+                      "type": "param",
+                      "line_height": 24,
+                      "margins": {
+                        "left": 4
+                      },
+                      "text": "@{like_count}",
+                      "text_color": "@{getColorFromDict(like, like_state, 'color')}"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "log_id": "set_like_toggle",
+                      "url": "div-action://set_variable?name=like_toggle&value=on"
+                    }
+                  ]
+                },
+                {
+                  "type": "button",
+                  "items": [
+                    {
+                      "type": "icon",
+                      "image_url": "@{comment_icon}"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "_comment": "eventum-news-detail",
+  "card": {
+    "variables": [
+      {
+        "name": "id",
+        "type": "string",
+        "value": "a321b203-8f83-4052-811e-321dfb0b2cbf"
+      },
+      {
+        "name": "date",
+        "type": "string",
+        "value": "22 Сентября, 15:30"
+      },
+      {
+        "name": "view_count",
+        "type": "string",
+        "value": "153"
+      },
+      {
+        "name": "like_count",
+        "type": "string",
+        "value": "182"
+      },
+      {
+        "name": "comment_count",
+        "type": "string",
+        "value": "0"
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "value": "Что посмотреть из фильмов на этой неделе"
+      },
+      {
+        "name": "cover_url",
+        "type": "url",
+        "value": "https://gas-forum.ru/wp-content/uploads/2024/07/molodezhnyj-den-e1720005858800.jpg"
+      },
+      {
+        "name": "paragraphs",
+        "type": "array",
+        "value": [
+          {
+            "text": "Молодёжный день, созданный под эгидой Международного делового конгресса (МДК) при ведущей роли ПАО «Газпром» и активном участии Санкт-Петербургского государственного экономического университета, других компаний-членов МДК, нацелен на популяризацию в студенческой аудитории актуальной информации о передовых технологиях, перспективных проектах, современных тенденциях развития в энергетике, на реализацию новых способов сотрудничества между компаниями и вузами."
+          },
+          {
+            "text": "В Молодёжном дне принимают участие студенты магистратуры и аспирантуры, которые интересуются энергетикой и видят своё профессиональное развитие в этой сфере. Кандидаты предварительно проходят ряд вступительных испытаний и обучение в Виртуальной академии — образовательной программе и отборочном этапе Молодёжного дня."
+          }
+        ]
+      },
+      {
+        "name": "view_action_url",
+        "type": "url",
+        "value": "http://localhost:3001/api/v1/web-sdk/eventum/news/01/view"
+      },
+      {
+        "name": "view_action_headers",
+        "type": "array",
+        "value": []
+      },
+      {
+        "name": "view_action_method",
+        "type": "string",
+        "value": "post"
+      },
+      {
+        "name": "like_action_url",
+        "type": "url",
+        "value": "http://localhost:3001/api/v1/web-sdk/eventum/news/01/like"
+      },
+      {
+        "name": "like_action_headers",
+        "type": "array",
+        "value": []
+      },
+      {
+        "name": "like_action_method",
+        "type": "string",
+        "value": "post"
+      },
+      {
+        "name": "like_toggle",
+        "type": "string",
+        "value": "off"
+      },
+      {
+        "name": "like_state",
+        "type": "string",
+        "value": "unset"
+      },
+      {
+        "name": "like",
+        "type": "dict",
+        "value": {
+          "set": {
+            "tint": "#ff3030",
+            "color": "#ff3030"
+          },
+          "unset": {
+            "tint": "initial",
+            "color": "#8e8e93"
+          }
+        }
+      },
+      {
+        "name": "view_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0iIzhlOGU5MyIgZD0iTTEgNy42cS0uMy40IDAgLjhjMSAxLjUgMy43IDQuOCA3IDQuOHM2LTMuMyA3LTQuOHEuMy0uNCAwLS44Yy0xLTEuNS0zLjctNC44LTctNC44UzIgNi4xIDEgNy42bTctMi4xYzMuMyAwIDMuMyA1IDAgNXMtMy4zLTUgMC01bTAgMWMtMiAwLTIgMyAwIDNzMi0zIDAtMyIvPjwvc3ZnPgo="
+      },
+      {
+        "name": "like_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0iI2VhZWFlZSIgc3Ryb2tlPSIjOGU4ZTkzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNMiA2LjVjMC0zLjIgMy42LTUuMiA2LTIuNyAyLjQtMi41IDYtLjUgNiAyLjcgMCAyLjYtMi43IDUuMi02IDYuOC0zLjMtMS42LTYtNC4yLTYtNi44WiIvPjwvc3ZnPgo="
+      },
+      {
+        "name": "comment_icon",
+        "type": "url",
+        "value": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGU4ZTkzIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBkPSJNIDE0LjUsOCBDIDE0LjUsMTEuNCAxMiwxMy41IDgsMTMuNSA2LjcsMTMuNSA1LjQsMTMuMyA0LjUsMTIuOCA0LjEsMTMgMywxMy45IDEuNSwxMy4zIDIsMTIuNiAyLjMsMTEuOSAyLjMsMTEuMiAyLjMsMTAuNCAxLjUsOS4zIDEuNSw4IDEuNSw0LjYgNCwyLjUgOCwyLjUgYyA0LDAgNi41LDIuMSA2LjUsNS41IHoiLz48L3N2Zz4="
+      }
+    ],
+    "variable_triggers": [
+      {
+        "condition": "@{like_toggle == 'on' && like_state == 'set'}",
+        "mode": "on_variable",
+        "actions": [
+          {
+            "log_id": "update like_toggle",
+            "url": "div-action://set_variable?name=like_toggle&value=off"
+          },
+          {
+            "log_id": "update like_state",
+            "url": "div-action://set_variable?name=like_state&value=unset"
+          },
+          {
+            "log_id": "update like_count",
+            "url": "div-action://set_variable?name=like_count&value=@{toInteger(like_count) - 1}"
+          },
+          {
+            "log_id": "submit unlike",
+            "typed": {
+              "type": "submit",
+              "container_id": "details",
+              "request": {
+                "method": "@{like_action_method}",
+                "headers": "@{like_action_headers}",
+                "url": "@{like_action_url}"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "condition": "@{like_toggle == 'on' && like_state != 'set'}",
+        "mode": "on_variable",
+        "actions": [
+          {
+            "log_id": "update like_toggle",
+            "url": "div-action://set_variable?name=like_toggle&value=off"
+          },
+          {
+            "log_id": "update like_state",
+            "url": "div-action://set_variable?name=like_state&value=set"
+          },
+          {
+            "log_id": "update like_count",
+            "url": "div-action://set_variable?name=like_count&value=@{toInteger(like_count) + 1}"
+          },
+          {
+            "log_id": "submit like",
+            "typed": {
+              "type": "submit",
+              "container_id": "details",
+              "request": {
+                "method": "@{like_action_method}",
+                "headers": "@{like_action_headers}",
+                "url": "@{like_action_url}"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "log_id": "root",
+    "states": [
+      {
+        "state_id": 0,
+        "div": {
+          "type": "container",
+          "id": "details",
+          "variables": [
+            {
+              "type": "string",
+              "name": "id",
+              "value": "@{id}"
+            }
+          ],
+          "visibility_actions": [
+            {
+              "log_id": "detail_page_opened",
+              "log_limit": 0,
+              "visibility_duration": 0,
+              "visibility_percentage": 20,
+              "url": "div-action://set_variable?name=view_count&value=@{toInteger(view_count) + 1}"
+            },
+            {
+              "log_id": "detail_page_viewed",
+              "log_limit": 0,
+              "visibility_duration": 0,
+              "visibility_percentage": 20,
+              "typed": {
+                "type": "submit",
+                "container_id": "details",
+                "request": {
+                  "method": "@{view_action_method}",
+                  "headers": "@{view_action_headers}",
+                  "url": "@{view_action_url}"
+                }
+              }
+            }
+          ],
+          "background": [
+            {
+              "color": "#fff",
+              "type": "solid"
+            }
+          ],
+          "height": {
+            "type": "match_parent"
+          },
+          "paddings": {
+            "top": 16,
+            "left": 16,
+            "right": 16,
+            "bottom": 16
+          },
+          "items": [
+            {
+              "type": "container",
+              "orientation": "horizontal",
+              "items": [
+                {
+                  "type": "param",
+                  "text": "@{date}",
+                  "paddings": {
+                    "right": 12
+                  },
+                  "width": {
+                    "type": "wrap_content"
+                  }
+                },
+                {
+                  "type": "icon",
+                  "image_url": "@{view_icon}",
+                  "h": 20,
+                  "w": 20
+                },
+                {
+                  "type": "param",
+                  "text": "@{view_count}",
+                  "paddings": {
+                    "left": 4
+                  },
+                  "width": {
+                    "type": "wrap_content"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "title",
+              "text": "@{title}"
+            },
+            {
+              "type": "cover",
+              "image_url": "@{cover_url}"
+            },
+            {
+              "type": "container",
+              "item_builder": {
+                "data": "@{paragraphs}",
+                "data_element_name": "item",
+                "prototypes": [
+                  {
+                    "div": {
+                      "type": "paragraph",
+                      "font_size": 16,
+                      "line_height": 24,
+                      "text": "@{item.getString('text')}"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "container",
+              "orientation": "horizontal",
+              "items": [
+                {
+                  "type": "container",
+                  "orientation": "horizontal",
+                  "margins": {
+                    "right": 12
+                  },
+                  "items": [
+                    {
+                      "type": "buttonIconText",
+                      "src": "@{like_icon}",
+                      "text": "@{like_count}",
+                      "tint": "@{getColorFromDict(like, like_state, 'tint')}",
+                      "color": "@{getColorFromDict(like, like_state, 'color')}",
+                      "actions": [
+                        {
+                          "log_id": "set_state",
+                          "url": "div-action://set_variable?name=like_toggle&value=on"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "buttonIcon",
+                      "src": "@{comment_icon}",
+                      "tint": "#8e8e93"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "templates": {
+    "icon": {
+      "type": "image",
+      "preload_required": true,
+      "height": {
+        "type": "fixed",
+        "$value": "h"
+      },
+      "width": {
+        "type": "fixed",
+        "$value": "w"
+      }
+    },
+    "param": {
+      "type": "text",
+      "font_size": 14,
+      "font_weight": "medium",
+      "line_height": 20,
+      "text_color": "#adb3bf"
+    },
+    "title": {
+      "type": "text",
+      "font_size": 24,
+      "font_weight": "medium",
+      "line_height": 28,
+      "margins": {
+        "top": 12,
+        "bottom": 12
+      }
+    },
+    "cover": {
+      "type": "image",
+      "preload_required": true,
+      "placeholder_color": "#8533FF",
+      "border": {
+        "corner_radius": 16
+      },
+      "margins": {
+        "bottom": 12
+      },
+      "width": {
+        "type": "match_parent"
+      }
+    },
+    "paragraph": {
+      "type": "text",
+      "font_size": 14,
+      "font_weight": "medium",
+      "line_height": 18,
+      "margins": {
+        "bottom": 12
+      }
+    },
+    "button": {
+      "type": "container",
+      "orientation": "horizontal",
+      "background": [
+        {
+          "color": "#eaeaee",
+          "type": "solid"
+        }
+      ],
+      "border": {
+        "corner_radius": 12
+      },
+      "paddings": {
+        "top": 8,
+        "left": 8,
+        "right": 8,
+        "bottom": 8
+      },
+      "width": {
+        "type": "wrap_content"
+      }
+    },
+    "buttonIcon": {
+      "type": "button",
+      "items": [
+        {
+          "type": "icon",
+          "$image_url": "src",
+          "$tint_color": "tint",
+          "h": 24,
+          "w": 24
+        }
+      ]
+    },
+    "buttonIconText": {
+      "type": "button",
+      "margins": {
+        "right": 12
+      },
+      "paddings": {
+        "top": 8,
+        "left": 12,
+        "right": 12,
+        "bottom": 8
+      },
+      "items": [
+        {
+          "type": "icon",
+          "$image_url": "src",
+          "$tint_color": "tint",
+          "h": 24,
+          "w": 24
+        },
+        {
+          "type": "param",
+          "$text_color": "color",
+          "line_height": 24,
+          "margins": {
+            "left": 4
+          },
+          "$text": "text"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.eventum.bdui.sdk" >
+4
+5    <uses-sdk android:minSdkVersion="24" />
+6
+7    <application>
+7-->/Users/GID/Documents/android-divkit-sdk/android-bdui-sdk/src/main/AndroidManifest.xml:4:5-9:19
+8        <activity
+8-->/Users/GID/Documents/android-divkit-sdk/android-bdui-sdk/src/main/AndroidManifest.xml:5:9-8:61
+9            android:name="com.eventum.bdui.sdk.BduiHostActivity"
+9-->/Users/GID/Documents/android-divkit-sdk/android-bdui-sdk/src/main/AndroidManifest.xml:6:13-45
+10            android:exported="false"
+10-->/Users/GID/Documents/android-divkit-sdk/android-bdui-sdk/src/main/AndroidManifest.xml:7:13-37
+11            android:theme="@style/Theme.Bdui.Transparent" />
+11-->/Users/GID/Documents/android-divkit-sdk/android-bdui-sdk/src/main/AndroidManifest.xml:8:13-58
+12    </application>
+13
+14</manifest>
