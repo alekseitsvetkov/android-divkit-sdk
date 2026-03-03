@@ -898,6 +898,7 @@ id div_transition_position
 id edit_query
 id edit_text_id
 id embeddedContainer
+id embeddedScrollContainer
 id end
 id errorContainer
 id errorMessage
@@ -954,6 +955,7 @@ id right_side
 id save_non_transition_alpha
 id save_overlay_view
 id screen
+id scrollContainer
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView

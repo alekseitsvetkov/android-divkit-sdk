@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Gradle
+.gradle/
+build
+build/
+**/build/
+android-bdui-sdk/build/
+sample-eventum-app/build/
+local.properties
+*.hprof
+
+# Kotlin/Java
+*.class
+out/
+captures/
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+
+# Keystore / signing
+*.jks
+*.keystore
+keystore.properties
+
+# Generated artifacts
+*.apk
+*.aab
+*.ap_
+*.dex
+*.so
+*.o
+*.obj

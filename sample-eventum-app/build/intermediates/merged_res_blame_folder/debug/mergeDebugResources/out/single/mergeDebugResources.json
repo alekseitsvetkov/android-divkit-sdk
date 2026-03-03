@@ -2,5 +2,9 @@
     {
         "merged": "com.eventum.sample.sample-eventum-app-debug-5:/layout_activity_main.xml.flat",
         "source": "com.eventum.sample.sample-eventum-app-main-7:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/private/var/folders/qy/wfpmnrfj6rg1b0ynfm44sd5m0000gp/T/cursor-sandbox-cache/823b6af5c866e503d4b44df87f4c471d/gradle/daemon/8.10.2/com.eventum.sample.sample-eventum-app-debug-5:/layout_activity_main.xml.flat",
+        "source": "/private/var/folders/qy/wfpmnrfj6rg1b0ynfm44sd5m0000gp/T/cursor-sandbox-cache/823b6af5c866e503d4b44df87f4c471d/gradle/daemon/8.10.2/com.eventum.sample.sample-eventum-app-main-7:/layout/activity_main.xml"
     }
 ]

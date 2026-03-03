@@ -9,6 +9,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.view.isGone
 import androidx.core.view.isVisible
+import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -31,6 +32,7 @@ class BduiScreenFragment : Fragment(R.layout.bdui_screen_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val container = view.findViewById<ViewGroup>(R.id.contentContainer)
+        val scrollContainer = view.findViewById<NestedScrollView>(R.id.scrollContainer)
         val loading = view.findViewById<ProgressBar>(R.id.loadingView)
         val errorContainer = view.findViewById<LinearLayout>(R.id.errorContainer)
         val errorMessage = view.findViewById<TextView>(R.id.errorMessage)
@@ -46,17 +48,17 @@ class BduiScreenFragment : Fragment(R.layout.bdui_screen_fragment) {
                     ScreenUiState.Loading -> {
                         loading.isVisible = true
                         errorContainer.isGone = true
-                        container.isGone = true
+                        scrollContainer.isGone = true
                     }
                     is ScreenUiState.Content -> {
                         loading.isGone = true
                         errorContainer.isGone = true
-                        container.isVisible = true
+                        scrollContainer.isVisible = true
                         bduiView.setJson(state.json)
                     }
                     is ScreenUiState.Error -> {
                         loading.isGone = true
-                        container.isGone = true
+                        scrollContainer.isGone = true
                         errorContainer.isVisible = true
                         errorMessage.text = state.message
                     }

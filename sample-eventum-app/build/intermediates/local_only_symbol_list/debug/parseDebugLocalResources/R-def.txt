@@ -1,6 +1,7 @@
 R_DEF: Internal format may change without notice
 local
 id embeddedContainer
+id embeddedScrollContainer
 id openStandaloneButton
 layout activity_main
 style Theme.Sample

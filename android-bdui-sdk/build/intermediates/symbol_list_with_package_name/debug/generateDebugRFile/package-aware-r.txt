@@ -5,6 +5,7 @@ id errorContainer
 id errorMessage
 id loadingView
 id retryButton
+id scrollContainer
 layout bdui_host_activity
 layout bdui_screen_fragment
 style Theme_Bdui_Transparent
