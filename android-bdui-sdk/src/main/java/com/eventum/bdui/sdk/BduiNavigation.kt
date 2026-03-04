@@ -25,6 +25,8 @@ internal class DefaultNavigationCommandParser(
 
     override fun parse(rawUrl: String): NavigationCommand? {
         val uri = rawUrl.toUriOrNull() ?: return null
+        if (rawUrl.startsWith("/")) return NavigationCommand.Push(rawUrl)
+
         val host = uri.host.orEmpty()
         val isHttp = uri.scheme == "http" || uri.scheme == "https"
         val isAllowedHttp = isHttp && (allowHosts.isEmpty() || allowHosts.contains(host))

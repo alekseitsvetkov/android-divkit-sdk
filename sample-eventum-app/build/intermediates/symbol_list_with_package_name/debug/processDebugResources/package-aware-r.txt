@@ -940,7 +940,6 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
-id openStandaloneButton
 id overflow_menu
 id parentPanel
 id parent_matrix

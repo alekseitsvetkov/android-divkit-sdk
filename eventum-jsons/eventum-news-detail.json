@@ -319,7 +319,13 @@
                     {
                       "type": "buttonIcon",
                       "src": "@{comment_icon}",
-                      "tint": "#8e8e93"
+                      "tint": "#8e8e93",
+                      "actions": [
+                        {
+                          "log_id": "open_comments",
+                          "url": "/comment"
+                        }
+                      ]
                     }
                   ]
                 }
